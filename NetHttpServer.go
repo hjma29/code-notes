@@ -13,7 +13,7 @@ func ArgServer(w http.ResponseWriter, req *http.Request) {
 
 http.Handle("/args", http.HandlerFunc(ArgServer))
 
-================
+/////////////////////////////////////////////////////
 func main() {
 		http.HandleFunc("/", handler) // each request calls handler
 		log.Fatal(http.ListenAndServe("localhost:8000", nil))
@@ -25,7 +25,7 @@ func main() {
 		fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
 	}
 
-===============
+/////////////////////////////////////////////////////
 func HandleFunc(pattern string, handler func(ResponseWriter, *Request)) {
 	DefaultServeMux.HandleFunc(pattern, handler)
 }
@@ -85,7 +85,8 @@ func (mux *ServeMux) Handle(pattern string, handler Handler) {
     }
 }
 
-===============
+/////////////////////////////////////////////////////
+
 func ListenAndServe(addr string, handler Handler) error {
     server := &Server{Addr: addr, Handler: handler}
     return server.ListenAndServe()
